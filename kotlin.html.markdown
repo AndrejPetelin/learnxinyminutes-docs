@@ -370,6 +370,26 @@ fun useObject() {
     val someRef: Any = ObjectExample // we use objects name just as is
 }
 
+/*
+Kotlin has nullable types, denoted by a ? after the type name. So an Int? can
+have an Int value or it can be null. There is a quick and easy way to assign a
+default value when an expression evaluates to null.
+This function takes a nullable String and returns a String when available or
+a default String when x == null
+*/
+fun elvisOperatorExample(x: String?): String {
+    return x ?: "Default string"
+}
+
+/*
+This function will always print a string, even when the argument passed to
+elvisOperatorExample is null
+*/
+fun useElvisOperatorExample() {
+    println(elvisOperatorExample("Hello, world!")) // => Hello, world!
+    println(elvisOperatorExample(null)) // => Default string
+}
+
 ```
 
 ### Further Reading
